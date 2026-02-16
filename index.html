@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRIP – Police Ready Incident Pack</title>
+
+<style>
+
+/* ================= ROOT COLORS ================= */
+:root{
+  --navy:#0A1F4F;
+  --deep-blue:#132C6B;
+  --orange:#F59E0B;
+  --soft-orange:#FDBA74;
+  --white:#ffffff;
+  --light:#f5f7fa;
+  --grey:#6b7280;
+}
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:var(--light);
+  color:var(--navy);
+  overflow-x:hidden;
+}
+
+section{
+  padding:90px 8%;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:var(--navy);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  z-index:999;
+}
+
+.logo{
+  color:var(--white);
+  font-weight:800;
+  font-size:20px;
+}
+
+.logo span{
+  color:var(--orange);
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  color:var(--white);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--orange);
+}
+
+/* ================= HERO ================= */
+.hero{
+  background:linear-gradient(135deg,var(--navy),var(--deep-blue));
+  color:var(--white);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:100px;
+}
+
+.hero-content{
+  max-width:700px;
+}
+
+.hero h1{
+  font-size:48px;
+  font-weight:900;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:var(--orange);
+}
+
+.hero p{
+  font-size:16px;
+  line-height:1.7;
+  color:#d1d5db;
+  margin-bottom:30px;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:var(--orange);
+  color:var(--navy);
+  font-weight:700;
+  border-radius:6px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.hero-btn:hover{
+  background:var(--soft-orange);
+}
+
+/* ================= ABOUT ================= */
+.about{
+  background:var(--white);
+}
+
+.section-title{
+  font-size:36px;
+  font-weight:900;
+  margin-bottom:20px;
+}
+
+.section-title span{
+  color:var(--orange);
+}
+
+.section-text{
+  max-width:800px;
+  line-height:1.8;
+  font-size:15px;
+  color:var(--grey);
+  margin-bottom:20px;
+}
+
+/* ================= FEATURES ================= */
+.features{
+  background:linear-gradient(135deg,var(--navy),var(--deep-blue));
+  color:var(--white);
+}
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.feature-card{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.feature-card:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,0.08);
+}
+
+.feature-card h4{
+  margin-bottom:10px;
+  font-size:18px;
+  color:var(--orange);
+}
+
+.feature-card p{
+  font-size:14px;
+  line-height:1.6;
+  color:#d1d5db;
+}
+
+/* ================= STATS ================= */
+.stats{
+  background:var(--white);
+  text-align:center;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.stat-box{
+  background:var(--light);
+  padding:40px;
+  border-radius:10px;
+}
+
+.stat-box h3{
+  font-size:32px;
+  color:var(--orange);
+}
+
+.stat-box p{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--grey);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--navy);
+  color:var(--white);
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="logo">PRIP <span>UK</span></div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Features</a>
+    <a href="#">Market</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Turn Retail Incidents Into  
+      <span>Police-Ready Evidence</span>
+    </h1>
+    <p>
+      PRIP transforms incomplete retail incident reports into structured,
+      legally aligned, DEMS-ready evidence packs designed for UK policing standards.
+      Faster submission. Higher completeness. Better case progression.
+    </p>
+    <a href="#" class="hero-btn">Request Pilot Access</a>
+  </div>
+</section>
+
+<!-- ================= ABOUT SECTION – EXECUTIVE MODEL ================= -->
+<section class="about-executive">
+
+  <div class="about-container">
+
+    <span class="about-tag">ABOUT PRIP</span>
+
+    <h2 class="about-title">
+      Rebuilding Retail Evidence Infrastructure for
+      <span>Police-Ready Compliance</span>
+    </h2>
+
+    <div class="about-divider"></div>
+
+    <div class="about-layout">
+
+      <!-- LEFT STRATEGIC BLOCK -->
+      <div class="about-core">
+
+        <h3>Why PRIP Exists</h3>
+
+        <p>
+          UK retail crime reporting remains fragmented, inconsistent,
+          and administratively burdensome. Evidence submissions often
+          fail due to missing documentation, poor structuring,
+          or incompatible file formatting.
+        </p>
+
+        <p>
+          PRIP – Police Ready Incident Pack was engineered to eliminate
+          these systemic gaps by introducing a structured,
+          validation-first incident documentation framework.
+        </p>
+
+      </div>
+
+      <!-- RIGHT STRATEGIC BLOCK -->
+      <div class="about-vision">
+
+        <h3>Infrastructure-Level Approach</h3>
+
+        <p>
+          Rather than acting as a reporting tool, PRIP functions as
+          compliance infrastructure. It standardises incident capture,
+          enforces evidential completeness, and produces
+          submission-ready digital evidence packs aligned
+          with UK policing intake requirements.
+        </p>
+
+        <p>
+          The platform transforms reactive documentation into
+          proactive compliance control, reducing administrative waste,
+          improving case acceptance probability,
+          and strengthening evidential integrity.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- STRATEGIC IMPACT STRIP -->
+    <div class="about-impact">
+
+      <div class="impact-item">
+        <strong>Structured Logging</strong>
+        <span>Mandatory data enforcement at capture stage</span>
+      </div>
+
+      <div class="impact-item">
+        <strong>Evidence Validation</strong>
+        <span>Automated completeness checks before export</span>
+      </div>
+
+      <div class="impact-item">
+        <strong>Police-Ready Output</strong>
+        <span>DEMS-compatible structured pack generation</span>
+      </div>
+
+      <div class="impact-item">
+        <strong>Operational Control</strong>
+        <span>Centralised visibility across retail sites</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= ROOT ================= */
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --accent:#3EEA7A;
+  --light:#E6EAF2;
+  --white:#FFFFFF;
+}
+
+/* SECTION */
+.about-executive{
+  background:var(--white);
+  padding:110px 8%;
+  font-family:"Segoe UI", sans-serif;
+  color:var(--navy);
+}
+
+/* CONTAINER */
+.about-container{
+  max-width:1150px;
+  margin:auto;
+}
+
+/* TAG */
+.about-tag{
+  font-size:12px;
+  letter-spacing:0.35em;
+  font-weight:700;
+  color:var(--deep);
+}
+
+/* TITLE */
+.about-title{
+  font-size:40px;
+  font-weight:900;
+  margin:18px 0 18px;
+  line-height:1.25;
+}
+
+.about-title span{
+  color:var(--accent);
+}
+
+/* DIVIDER */
+.about-divider{
+  width:120px;
+  height:3px;
+  background:var(--accent);
+  margin-bottom:50px;
+  border-radius:10px;
+}
+
+/* GRID LAYOUT */
+.about-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+}
+
+/* HEADINGS */
+.about-core h3,
+.about-vision h3{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:15px;
+  color:var(--deep);
+}
+
+/* TEXT */
+.about-layout p{
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:15px;
+  color:var(--deep);
+}
+
+/* IMPACT STRIP */
+.about-impact{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  padding-top:30px;
+  border-top:1px solid var(--light);
+}
+
+.impact-item strong{
+  display:block;
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:6px;
+  color:var(--navy);
+}
+
+.impact-item span{
+  font-size:13px;
+  color:var(--deep);
+}
+
+/* ================= PRO MOBILE OPTIMISATION ================= */
+@media(max-width:900px){
+
+  .about-executive{
+    padding:70px 20px;
+  }
+
+  .about-container{
+    width:100%;
+  }
+
+  /* Tag */
+  .about-tag{
+    font-size:10px;
+    letter-spacing:0.25em;
+    display:block;
+    margin-bottom:12px;
+  }
+
+  /* Title */
+  .about-title{
+    font-size:24px;
+    line-height:1.3;
+    margin-bottom:14px;
+  }
+
+  .about-divider{
+    width:70px;
+    height:2px;
+    margin-bottom:35px;
+  }
+
+  /* Layout Stack */
+  .about-layout{
+    grid-template-columns:1fr;
+    gap:30px;
+    margin-bottom:40px;
+  }
+
+  .about-core h3,
+  .about-vision h3{
+    font-size:16px;
+    margin-bottom:10px;
+  }
+
+  .about-layout p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* Impact Section Mobile Upgrade */
+  .about-impact{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding-top:25px;
+  }
+
+  .impact-item{
+    padding:14px 16px;
+    background:var(--light);
+    border-radius:10px;
+  }
+
+  .impact-item strong{
+    font-size:13px;
+  }
+
+  .impact-item span{
+    font-size:12px;
+  }
+
+}
+
+/* EXTRA SMALL DEVICES */
+@media(max-width:480px){
+
+  .about-title{
+    font-size:20px;
+  }
+
+  .about-layout p{
+    font-size:13px;
+  }
+
+  .impact-item{
+    padding:12px;
+  }
+
+}
+
+</style>
+<!-- ================= ELITE FEATURES SECTION PRO ================= -->
+<section id="features" class="features-elite-pro">
+
+  <div class="features-wrap">
+
+    <!-- HEADER -->
+    <div class="features-header">
+      <span class="features-label">PLATFORM INTELLIGENCE LAYER</span>
+
+      <h2>
+        Structured <span>Compliance Infrastructure</span><br>
+        Built for <span class="accent">Operational Control</span>
+      </h2>
+
+      <div class="features-divider"></div>
+
+      <p>
+        PRIP transforms incident documentation into enforcement-grade,
+        structured digital compliance infrastructure with automation,
+        audit integrity and scalable SaaS deployment.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="features-grid">
+
+      <!-- FEATURE CARD -->
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image1.jpg">
+        </div>
+        <h4>Incident Capture Engine</h4>
+        <p>Digitised, police-ready reporting aligned with UK standards.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image2.jpg">
+        </div>
+        <h4>Evidence Consolidation</h4>
+        <p>Secure file, CCTV and statement integration framework.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image3.jpg">
+        </div>
+        <h4>Police Export Reports</h4>
+        <p>Automated structured incident documentation outputs.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image4.jpg">
+        </div>
+        <h4>Immutable Audit Logs</h4>
+        <p>Time-stamped traceability across compliance lifecycle.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image5.jpg">
+        </div>
+        <h4>Access Governance</h4>
+        <p>Tier-based permission logic ensuring accountability.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image6.jpg">
+        </div>
+        <h4>Compliance Dashboard</h4>
+        <p>Real-time risk visibility across locations.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image7.jpg">
+        </div>
+        <h4>Workflow Automation</h4>
+        <p>Streamlined structured documentation pipelines.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image8.jpg">
+        </div>
+        <h4>Risk Detection AI</h4>
+        <p>Predictive anomaly identification system.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="image-wrap">
+          <img src="image9.jpg">
+        </div>
+        <h4>Secure Cloud Deployment</h4>
+        <p>Scalable SaaS infrastructure built for UK retail.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --accent:#3EEA7A;
+  --light:#E6EAF2;
+  --white:#FFFFFF;
+}
+
+/* SECTION */
+.features-elite-pro{
+  background:linear-gradient(135deg,var(--navy),var(--deep));
+  padding:130px 8%;
+  color:var(--white);
+  font-family:Arial, sans-serif;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Subtle radial glow */
+.features-elite-pro::before{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle,var(--accent),transparent 70%);
+  opacity:0.06;
+  top:-150px;
+  right:-120px;
+}
+
+/* HEADER */
+.features-header{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+  margin-bottom:90px;
+}
+
+.features-label{
+  font-size:12px;
+  letter-spacing:0.4em;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.features-header h2{
+  font-size:46px;
+  font-weight:900;
+  margin:20px 0 15px;
+}
+
+.features-header .accent{
+  color:var(--accent);
+}
+
+.features-divider{
+  width:120px;
+  height:4px;
+  background:var(--accent);
+  margin:0 auto 25px;
+  border-radius:10px;
+}
+
+.features-header p{
+  font-size:16px;
+  color:var(--light);
+  line-height:1.7;
+}
+
+/* GRID */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:50px;
+}
+
+/* CARD */
+.feature-box{
+  position:relative;
+  background:rgba(255,255,255,0.04);
+  padding:28px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.08);
+  overflow:hidden;
+  transition:0.5s ease;
+}
+
+/* Animated Shine */
+.feature-box::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  transform:skewX(-25deg);
+}
+
+.feature-box:hover::after{
+  animation:shine 1s forwards;
+}
+
+@keyframes shine{
+  100%{
+    left:150%;
+  }
+}
+
+/* Hover depth */
+.feature-box:hover{
+  transform:translateY(-12px);
+  border-color:var(--accent);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* IMAGE */
+.image-wrap{
+  overflow:hidden;
+  border-radius:14px;
+  margin-bottom:18px;
+}
+
+.image-wrap img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  transition:0.6s ease;
+}
+
+.feature-box:hover img{
+  transform:scale(1.1);
+}
+
+/* TITLE */
+.feature-box h4{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:10px;
+  color:var(--accent);
+}
+
+/* TEXT */
+.feature-box p{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--light);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+  .features-header h2{
+    font-size:28px;
+  }
+}
+
+</style>
+<!-- ================= EXECUTIVE PROBLEM SOLUTION ================= -->
+<section class="ps-executive">
+
+  <div class="ps-container">
+
+    <!-- Header -->
+    <div class="ps-header">
+      <span class="ps-label">SYSTEMIC FAILURE → STRUCTURED RESPONSE</span>
+      <h2>
+        Closing the <span class="dark">Evidence Gap</span> in 
+        <span class="highlight">UK Retail Crime Reporting</span>
+      </h2>
+      <div class="ps-line"></div>
+    </div>
+
+    <!-- Split Structure -->
+    <div class="ps-structure">
+
+      <!-- LEFT : PROBLEM -->
+      <div class="ps-column problem">
+
+        <div class="ps-badge">INDUSTRY PROBLEM</div>
+
+        <h3>Unstructured Evidence.  
+        Low Prosecution Outcomes.</h3>
+
+        <p>
+          Retail crime incidents are recorded daily, yet case acceptance
+          remains limited due to incomplete documentation,
+          non-standardised exhibit formats, and inconsistent
+          submission structuring.
+        </p>
+
+        <div class="ps-points">
+          <div>Fragmented CCTV exports</div>
+          <div>Missing witness statements</div>
+          <div>Improper exhibit indexing</div>
+          <div>Manual police form errors</div>
+        </div>
+
+        <div class="ps-metric">
+          Result: Incidents fail to meet evidential thresholds
+          required for formal review.
+        </div>
+
+      </div>
+
+      <!-- RIGHT : SOLUTION -->
+      <div class="ps-column solution">
+
+        <div class="ps-badge accent">PLATFORM SOLUTION</div>
+
+        <h3>Structured, Police-Ready  
+        Digital Incident Packs</h3>
+
+        <p>
+          PRIP converts raw incident records into structured,
+          compliance-aligned digital evidence packs
+          ready for law enforcement submission.
+        </p>
+
+        <div class="ps-solution-list">
+
+          <div class="ps-item">
+            <span></span>
+            Guided Evidence Capture Workflow
+          </div>
+
+          <div class="ps-item">
+            <span></span>
+            Automated Minimum Evidence Validation
+          </div>
+
+          <div class="ps-item">
+            <span></span>
+            Indexed Exhibit Bundling System
+          </div>
+
+          <div class="ps-item">
+            <span></span>
+            Audit-Trail Protected Documentation
+          </div>
+
+          <div class="ps-item">
+            <span></span>
+            Submission-Ready Digital Pack Generation
+          </div>
+
+        </div>
+
+        <div class="ps-outcome">
+          Outcome: Higher quality submissions.  
+          Faster case progression.  
+          Institutional-grade compliance structure.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= ROOT ================= */
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --accent:#3EEA7A;
+  --light:#E6EAF2;
+  --white:#FFFFFF;
+}
+
+/* SECTION */
+.ps-executive{
+  background:var(--white);
+  padding:120px 8%;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--navy);
+}
+
+/* CONTAINER */
+.ps-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HEADER */
+.ps-header{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.ps-label{
+  font-size:12px;
+  letter-spacing:0.4em;
+  color:var(--deep);
+  font-weight:700;
+}
+
+.ps-header h2{
+  font-size:44px;
+  font-weight:900;
+  margin:22px 0 15px;
+  line-height:1.2;
+}
+
+.ps-header .dark{
+  color:var(--navy);
+}
+
+.ps-header .highlight{
+  color:var(--accent);
+}
+
+.ps-line{
+  width:120px;
+  height:4px;
+  background:var(--accent);
+  margin:0 auto;
+}
+
+/* STRUCTURE */
+.ps-structure{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+}
+
+/* COLUMN */
+.ps-column{
+  padding:40px;
+  border:1px solid var(--light);
+  position:relative;
+}
+
+/* BADGE */
+.ps-badge{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.3em;
+  color:var(--deep);
+  margin-bottom:20px;
+}
+
+.ps-badge.accent{
+  color:var(--accent);
+}
+
+/* TITLES */
+.ps-column h3{
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:20px;
+  line-height:1.4;
+}
+
+/* TEXT */
+.ps-column p{
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+/* PROBLEM LIST */
+.ps-points div{
+  font-size:14px;
+  margin-bottom:12px;
+  padding-left:16px;
+  position:relative;
+}
+
+.ps-points div::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:6px;
+  height:6px;
+  background:var(--deep);
+  border-radius:50%;
+}
+
+/* METRIC */
+.ps-metric{
+  margin-top:25px;
+  font-size:14px;
+  background:var(--light);
+  padding:18px;
+  border-left:4px solid var(--deep);
+}
+
+/* SOLUTION LIST */
+.ps-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.ps-item span{
+  width:8px;
+  height:8px;
+  background:var(--accent);
+  border-radius:50%;
+}
+
+/* OUTCOME */
+.ps-outcome{
+  margin-top:25px;
+  padding:18px;
+  border-left:4px solid var(--accent);
+  background:rgba(62,234,122,0.08);
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .ps-structure{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .ps-header h2{
+    font-size:26px;
+  }
+
+}
+
+</style>
+<!-- ================= UK RETAIL CRIME REALITY ================= -->
+<section class="uk-reality-pro">
+
+  <div class="reality-container">
+
+    <span class="reality-tag">UK RETAIL CRIME LANDSCAPE 2024</span>
+
+    <h2 class="reality-heading">
+      Retail Crime is No Longer Cyclical —
+      <span>It Is Structural</span>
+    </h2>
+
+    <div class="reality-divider"></div>
+
+    <p class="reality-intro">
+      The UK retail sector recorded 516,971 shoplifting offences in 2024,
+      marking a 20% year-on-year increase. What was once opportunistic theft
+      has evolved into organised, repeat, and increasingly violent activity.
+    </p>
+
+    <!-- KEY STATISTICS -->
+    <div class="reality-grid">
+
+      <div class="stat-card">
+        <h3>516,971</h3>
+        <p>Recorded shoplifting offences in 2024</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>£2.2bn</h3>
+        <p>Annual direct theft losses to retailers</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>2,000+</h3>
+        <p>Daily violent or abusive incidents</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>£4.2bn</h3>
+        <p>Total annual cost including prevention</p>
+      </div>
+
+    </div>
+
+    <!-- STRUCTURAL GAP -->
+    <div class="gap-section">
+
+      <h4>Systemic Reporting & Evidence Gap</h4>
+
+      <p>
+        Despite increased CCTV deployment and in-store security,
+        only 36% of incidents are formally reported.
+        Many cases fail to progress due to incomplete evidence,
+        missing structured documentation, or inconsistent reporting formats.
+      </p>
+
+      <p>
+        The crisis is no longer about physical security —
+        it is about structured, police-ready, submission-ready evidence.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --accent:#3EEA7A;
+  --light:#E6EAF2;
+  --white:#FFFFFF;
+}
+
+/* SECTION */
+.uk-reality-pro{
+  background:linear-gradient(135deg,var(--navy),var(--deep));
+  padding:110px 8%;
+  color:var(--white);
+  font-family:Arial, sans-serif;
+}
+
+/* CONTAINER */
+.reality-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* TAG */
+.reality-tag{
+  font-size:12px;
+  letter-spacing:0.4em;
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* HEADING */
+.reality-heading{
+  font-size:42px;
+  font-weight:900;
+  margin:18px 0;
+}
+
+.reality-heading span{
+  color:var(--accent);
+}
+
+/* DIVIDER */
+.reality-divider{
+  width:120px;
+  height:3px;
+  background:var(--accent);
+  margin:25px 0 30px;
+}
+
+/* INTRO */
+.reality-intro{
+  max-width:750px;
+  font-size:16px;
+  line-height:1.7;
+  color:var(--light);
+  margin-bottom:60px;
+}
+
+/* GRID */
+.reality-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  margin-bottom:70px;
+}
+
+.stat-card{
+  padding-left:18px;
+  border-left:3px solid var(--accent);
+}
+
+.stat-card h3{
+  font-size:26px;
+  margin-bottom:8px;
+  color:var(--accent);
+}
+
+.stat-card p{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--light);
+}
+
+/* GAP SECTION */
+.gap-section h4{
+  font-size:20px;
+  margin-bottom:14px;
+  color:var(--accent);
+}
+
+.gap-section p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--light);
+  margin-bottom:12px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .uk-reality-pro{
+    padding:80px 20px;
+  }
+
+  .reality-heading{
+    font-size:26px;
+  }
+
+  .reality-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .reality-intro{
+    font-size:14px;
+  }
+
+}
+
+</style>
+<!-- ================= CONNECTED PROCESS SECTION ================= -->
+<section class="process-section">
+
+  <div class="process-container">
+
+    <span class="process-tag">OPERATIONAL WORKFLOW</span>
+
+    <h2 class="process-title">
+      Structured <span>Incident-to-Evidence</span> Process
+    </h2>
+
+    <div class="process-divider"></div>
+
+    <p class="process-intro">
+      PRIP converts fragmented in-store incident reporting into a
+      structured, validation-driven workflow that produces
+      police-ready, DEMS-compatible evidence packs aligned with
+      UK retail crime documentation standards.
+    </p>
+
+    <!-- CONNECTED FLOW -->
+    <div class="process-flow">
+
+      <div class="process-step">
+        <div class="step-top">
+          <div class="step-number">01</div>
+          <h4>Incident Logging</h4>
+        </div>
+        <p>
+          Staff capture incident data through structured digital forms
+          enforcing mandatory fields, timestamps, offender details,
+          and minimum evidence thresholds at source.
+        </p>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="process-step">
+        <div class="step-top">
+          <div class="step-number">02</div>
+          <h4>Evidence Validation</h4>
+        </div>
+        <p>
+          Built-in logic verifies CCTV references, witness inputs,
+          and documentation completeness before progression —
+          reducing police rejection risk.
+        </p>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="process-step">
+        <div class="step-top">
+          <div class="step-number">03</div>
+          <h4>Pack Structuring</h4>
+        </div>
+        <p>
+          System automatically compiles a machine-manifest
+          evidence structure aligned with DEMS intake format,
+          eliminating manual file assembly.
+        </p>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="process-step">
+        <div class="step-top">
+          <div class="step-number">04</div>
+          <h4>Secure Export</h4>
+        </div>
+        <p>
+          Export-ready police submission pack improves
+          administrative efficiency, accelerates case progression,
+          and strengthens evidential integrity.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= ROOT ================= */
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --accent:#3EEA7A;
+  --light:#E6EAF2;
+  --white:#FFFFFF;
+}
+
+/* SECTION */
+.process-section{
+  background:var(--white);
+  padding:90px 8%;
+  font-family:"Segoe UI", sans-serif;
+  color:var(--navy);
+}
+
+/* CONTAINER */
+.process-container{
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+/* TAG */
+.process-tag{
+  font-size:12px;
+  letter-spacing:0.35em;
+  font-weight:700;
+  color:var(--deep);
+}
+
+/* TITLE */
+.process-title{
+  font-size:38px;
+  font-weight:900;
+  margin:18px 0 12px;
+}
+
+.process-title span{
+  color:var(--accent);
+}
+
+/* DIVIDER */
+.process-divider{
+  width:110px;
+  height:3px;
+  background:var(--accent);
+  margin:0 auto 25px;
+  border-radius:8px;
+}
+
+/* INTRO */
+.process-intro{
+  max-width:720px;
+  margin:0 auto 50px;
+  font-size:15px;
+  line-height:1.6;
+  color:var(--deep);
+}
+
+/* FLOW */
+.process-flow{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  gap:25px;
+}
+
+/* STEP */
+.process-step{
+  flex:1;
+  text-align:left;
+  padding:18px;
+  border:1px solid var(--light);
+  border-radius:12px;
+  transition:0.3s ease;
+}
+
+.process-step:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* TOP ROW */
+.step-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+/* NUMBER */
+.step-number{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--accent);
+  color:var(--navy);
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+}
+
+/* TITLE */
+.process-step h4{
+  font-size:16px;
+  font-weight:800;
+}
+
+/* TEXT */
+.process-step p{
+  font-size:13.5px;
+  line-height:1.6;
+  color:var(--deep);
+}
+
+/* CONNECTOR */
+.connector{
+  width:40px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.connector::before{
+  content:"";
+  width:40px;
+  height:2px;
+  background:var(--accent);
+}
+
+.connector::after{
+  content:"";
+  position:absolute;
+  right:-2px;
+  width:0;
+  height:0;
+  border-left:8px solid var(--accent);
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .process-flow{
+    flex-direction:column;
+  }
+
+  .connector{
+    width:2px;
+    height:30px;
+  }
+
+  .connector::before{
+    width:2px;
+    height:30px;
+  }
+
+  .connector::after{
+    display:none;
+  }
+
+  .process-title{
+    font-size:26px;
+  }
+
+  .process-intro{
+    font-size:14px;
+  }
+
+}
+
+</style>
+<!-- ================= EXECUTIVE FOUNDER SECTION ================= -->
+<section class="founder-institutional">
+
+  <div class="founder-wrap">
+
+    <!-- SMALL LABEL -->
+    <span class="founder-eyebrow">
+      EXECUTIVE LEADERSHIP • COMPLIANCE ARCHITECTURE • UK RETAIL INFRASTRUCTURE
+    </span>
+
+    <!-- MAIN HEADING -->
+    <h2 class="founder-heading">
+      The Strategic Direction Behind
+      <span>PRIP – Police Ready Incident Pack</span>
+    </h2>
+
+    <div class="founder-line"></div>
+
+    <!-- QUOTE BLOCK -->
+    <div class="founder-manifesto">
+
+      <p class="statement">
+        “Retail incident reporting should not rely on fragmented
+        documentation or reactive compliance processes.
+        It should operate as structured, police-aligned infrastructure.”
+      </p>
+
+      <span class="founder-name">
+        — Alkesh Khajindar, Founder
+      </span>
+
+    </div>
+
+    <!-- CORE STRATEGY GRID -->
+    <div class="founder-strategy">
+
+      <div class="strategy-item">
+        <h4>Infrastructure First</h4>
+        <p>
+          PRIP is engineered as compliance architecture,
+          not a simple reporting application.
+          It enforces evidential standards at the point of creation.
+        </p>
+      </div>
+
+      <div class="strategy-item">
+        <h4>Police-Aligned Outputs</h4>
+        <p>
+          Every incident export follows structured evidential formatting
+          aligned with UK enforcement expectations,
+          reducing rejection and follow-up friction.
+        </p>
+      </div>
+
+      <div class="strategy-item">
+        <h4>Operational Accountability</h4>
+        <p>
+          The system embeds traceability, time-stamped validation,
+          and structured documentation controls
+          to eliminate compliance ambiguity.
+        </p>
+      </div>
+
+      <div class="strategy-item">
+        <h4>Scalable UK SaaS Model</h4>
+        <p>
+          Designed for SME retailers today,
+          with enterprise-level scalability for national deployment tomorrow.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CLOSING VISION -->
+    <div class="founder-closing">
+      <p>
+        The long-term vision is to make PRIP the standardised
+        evidence-layer infrastructure across UK retail —
+        transforming incident documentation into structured,
+        prosecution-ready digital intelligence.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ===== COLORS ===== */
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --light:#E6EAF2;
+  --white:#FFFFFF;
+  --accent:#3EEA7A;
+}
+
+/* SECTION */
+.founder-institutional{
+  background:linear-gradient(135deg,var(--navy),var(--deep));
+  padding:120px 8%;
+  color:var(--white);
+  font-family:Arial, Helvetica, sans-serif;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Subtle Accent Glow */
+.founder-institutional::before{
+  content:"";
+  position:absolute;
+  right:-150px;
+  top:-150px;
+  width:350px;
+  height:350px;
+  background:var(--accent);
+  opacity:0.05;
+  border-radius:50%;
+}
+
+/* WRAP */
+.founder-wrap{
+  max-width:1100px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+/* Eyebrow */
+.founder-eyebrow{
+  font-size:11px;
+  letter-spacing:0.35em;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+  margin-bottom:20px;
+}
+
+/* Heading */
+.founder-heading{
+  font-size:42px;
+  font-weight:900;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.founder-heading span{
+  color:var(--accent);
+}
+
+.founder-line{
+  width:120px;
+  height:4px;
+  background:var(--accent);
+  margin-bottom:50px;
+}
+
+/* MANIFESTO */
+.founder-manifesto{
+  max-width:750px;
+  margin-bottom:70px;
+}
+
+.statement{
+  font-size:20px;
+  font-weight:600;
+  line-height:1.6;
+  color:var(--light);
+}
+
+.founder-name{
+  display:block;
+  margin-top:18px;
+  font-size:14px;
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* STRATEGY GRID */
+.founder-strategy{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px 80px;
+  margin-bottom:70px;
+}
+
+.strategy-item h4{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:12px;
+  color:var(--accent);
+}
+
+.strategy-item p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--light);
+}
+
+/* Closing */
+.founder-closing{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:30px;
+}
+
+.founder-closing p{
+  max-width:850px;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--light);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .founder-strategy{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .founder-heading{
+    font-size:26px;
+  }
+
+  .statement{
+    font-size:16px;
+  }
+
+  .strategy-item p{
+    font-size:14px;
+  }
+
+}
+
+</style>
+<!-- ================= PRIP EXECUTIVE FAQ ================= -->
+<section class="prip-faq" id="faq">
+
+  <div class="faq-wrapper">
+
+    <!-- HEADER -->
+    <div class="faq-header">
+      <span class="faq-mini">UK COMPLIANCE • EVIDENCE STRUCTURE • POLICE-READY REPORTING</span>
+
+      <h2>
+        Frequently Asked <span>Questions</span>
+      </h2>
+
+      <div class="faq-divider"></div>
+
+      <p>
+        Structured clarity on evidential integrity, DEMS compatibility,
+        regulatory alignment and operational deployment within UK retail environments.
+      </p>
+    </div>
+
+    <!-- FAQ ITEMS -->
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">01</span>
+          <span class="faq-title-text">What is PRIP and who is it designed for?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        PRIP (Police Ready Incident Pack) is a structured SaaS platform
+        engineered for UK retailers, compliance teams and loss prevention
+        departments seeking evidentially sound incident documentation.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">02</span>
+          <span class="faq-title-text">How does PRIP improve evidence submission quality?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        PRIP enforces mandatory metadata capture including timestamps,
+        CCTV references, exhibit indexing and witness documentation.
+        Incomplete submissions cannot be exported.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">03</span>
+          <span class="faq-title-text">Is PRIP aligned with UK regulatory expectations?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        Yes. PRIP is structured to support evidential standards,
+        GDPR compliance, and audit traceability suitable for
+        UK policing and legal workflows.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">04</span>
+          <span class="faq-title-text">Does PRIP integrate with existing systems?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        The platform supports structured exports and integration-ready
+        architecture for DEMS platforms and internal reporting systems.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">05</span>
+          <span class="faq-title-text">How secure is stored incident data?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        PRIP implements encryption layers, access governance,
+        and immutable audit logging to preserve data integrity
+        and protect evidential reliability.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">06</span>
+          <span class="faq-title-text">Is PRIP scalable for multi-site retail groups?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        Yes. PRIP supports structured deployment across
+        national store networks with centralised compliance oversight.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="faq-left">
+          <span class="faq-number">07</span>
+          <span class="faq-title-text">What makes PRIP different from basic incident tools?</span>
+        </div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        Unlike generic reporting tools, PRIP is engineered
+        specifically for police-ready evidence packaging,
+        structured compliance validation and institutional-grade documentation.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+/* COLORS */
+:root{
+  --navy:#0A1F4F;
+  --royal:#0D2C6C;
+  --orange:#F4A623;
+  --grey:#6B7280;
+  --border:#E5E7EB;
+}
+
+/* SECTION */
+.prip-faq{
+  padding:110px 8%;
+  background:#FFFFFF;
+  font-family:Arial, sans-serif;
+  color:var(--navy);
+}
+
+.faq-wrapper{
+  max-width:900px;
+  margin:auto;
+}
+
+/* HEADER */
+.faq-header{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.faq-mini{
+  font-size:12px;
+  letter-spacing:0.35em;
+  font-weight:700;
+  color:var(--orange);
+}
+
+.faq-header h2{
+  font-size:42px;
+  font-weight:900;
+  margin:18px 0;
+}
+
+.faq-header h2 span{
+  color:var(--royal);
+}
+
+.faq-divider{
+  width:120px;
+  height:4px;
+  background:var(--orange);
+  margin:20px auto;
+}
+
+.faq-header p{
+  font-size:15px;
+  color:var(--grey);
+}
+
+/* FAQ ITEM */
+.faq-item{
+  border-bottom:1px solid var(--border);
+  padding:26px 0;
+  position:relative;
+  transition:0.3s ease;
+}
+
+.faq-item:hover{
+  transform:translateX(6px);
+}
+
+/* LEFT BAR */
+.faq-item::before{
+  content:"";
+  position:absolute;
+  left:-18px;
+  top:28px;
+  width:4px;
+  height:0%;
+  background:var(--orange);
+  transition:0.4s ease;
+}
+
+.faq-item.active::before{
+  height:65%;
+}
+
+/* QUESTION */
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+.faq-left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.faq-number{
+  font-weight:900;
+  font-size:14px;
+  color:var(--orange);
+}
+
+.faq-title-text{
+  font-size:17px;
+  font-weight:700;
+}
+
+/* TOGGLE */
+.faq-toggle{
+  width:20px;
+  height:20px;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  position:relative;
+}
+
+.faq-toggle::before,
+.faq-toggle::after{
+  content:"";
+  position:absolute;
+  background:var(--orange);
+}
+
+.faq-toggle::before{
+  width:10px;
+  height:2px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.faq-toggle::after{
+  width:2px;
+  height:10px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.faq-item.active .faq-toggle::after{
+  opacity:0;
+}
+
+/* ANSWER */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:all 0.4s ease;
+  font-size:14px;
+  line-height:1.7;
+  margin-top:14px;
+  color:var(--grey);
+}
+
+.faq-item.active .faq-answer{
+  max-height:300px;
+  opacity:1;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .prip-faq{
+    padding:70px 20px;
+  }
+
+  .faq-header h2{
+    font-size:26px;
+  }
+
+  .faq-title-text{
+    font-size:15px;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* Professional Auto Close Accordion */
+document.querySelectorAll(".faq-question").forEach(item=>{
+  item.addEventListener("click",()=>{
+    const parent = item.parentElement;
+    document.querySelectorAll(".faq-item").forEach(el=>{
+      if(el !== parent){
+        el.classList.remove("active");
+      }
+    });
+    parent.classList.toggle("active");
+  });
+});
+
+</script>
+<!-- ================= EXECUTIVE CONTACT ULTRA ================= -->
+<section class="contact-ultra" id="contact">
+
+  <!-- Ambient Light Layers -->
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+
+  <div class="contact-inner">
+
+    <!-- LEFT CONTENT -->
+    <div class="contact-content">
+
+      <span class="contact-badge">INSTITUTIONAL ACCESS</span>
+
+      <h2 class="contact-heading">
+        Strategic <span>Platform Engagement</span><br>
+        & Infrastructure Review
+      </h2>
+
+      <div class="contact-divider">
+        <span></span>
+      </div>
+
+      <p class="contact-text">
+        PRIP is engineered as an operational intelligence layer for
+        regulated retail and enforcement environments requiring
+        structured incident documentation and evidentiary integrity.
+      </p>
+
+      <p class="contact-text muted">
+        Engage directly with the architecture team to evaluate
+        deployment readiness, compliance compatibility,
+        and long-term institutional scalability.
+      </p>
+
+      <!-- Authority Points -->
+      <div class="contact-trust">
+        <span>Secure Documentation Flow</span>
+        <span>Evidence-Grade Record Integrity</span>
+        <span>DEMS-Compatible Exports</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="contact-card">
+
+      <div class="card-header">
+        Private Strategy Briefing
+      </div>
+
+      <div class="card-sub">
+        Reserved for qualified organisations & institutional teams.
+      </div>
+
+      <button class="contact-button" onclick="openMail()">
+        Request Confidential Briefing
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= COLORS ================= */
+:root{
+  --navy:#0A1F4F;
+  --deep:#132C6B;
+  --accent:#F59E0B;
+  --accent-soft:#FDBA74;
+  --white:#FFFFFF;
+  --light:#E6EAF2;
+  --muted:#94A3B8;
+}
+
+/* ================= SECTION ================= */
+.contact-ultra{
+  position:relative;
+  background:linear-gradient(140deg,var(--navy),var(--deep));
+  padding:140px 8%;
+  color:var(--white);
+  overflow:hidden;
+}
+
+/* Ambient Soft Glow */
+.ambient{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.15;
+}
+
+.ambient-1{
+  width:350px;
+  height:350px;
+  background:var(--accent);
+  top:-120px;
+  right:-100px;
+}
+
+.ambient-2{
+  width:300px;
+  height:300px;
+  background:var(--accent-soft);
+  bottom:-120px;
+  left:-100px;
+}
+
+/* INNER */
+.contact-inner{
+  position:relative;
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:80px;
+  align-items:center;
+}
+
+/* LEFT CONTENT */
+.contact-badge{
+  font-size:12px;
+  letter-spacing:0.4em;
+  font-weight:700;
+  color:var(--accent-soft);
+}
+
+.contact-heading{
+  font-size:44px;
+  font-weight:900;
+  margin:18px 0 15px;
+  line-height:1.2;
+}
+
+.contact-heading span{
+  color:var(--accent);
+}
+
+.contact-divider{
+  width:160px;
+  height:3px;
+  background:rgba(255,255,255,0.15);
+  margin-bottom:30px;
+  position:relative;
+  overflow:hidden;
+}
+
+.contact-divider span{
+  position:absolute;
+  width:60px;
+  height:100%;
+  background:var(--accent);
+  animation:dividerMove 4s linear infinite;
+}
+
+@keyframes dividerMove{
+  0%{ left:-60px; }
+  100%{ left:160px; }
+}
+
+.contact-text{
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:18px;
+  color:var(--light);
+}
+
+.contact-text.muted{
+  opacity:0.85;
+}
+
+/* TRUST TAGS */
+.contact-trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:25px;
+}
+
+.contact-trust span{
+  font-size:12px;
+  padding:7px 14px;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:30px;
+  color:var(--accent-soft);
+  backdrop-filter:blur(4px);
+}
+
+/* RIGHT CARD */
+.contact-card{
+  background:rgba(255,255,255,0.05);
+  padding:50px 40px;
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter:blur(10px);
+  position:relative;
+}
+
+/* Card subtle border animation */
+.contact-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  background-size:200% 100%;
+  animation:borderFlow 6s linear infinite;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events:none;
+}
+
+@keyframes borderFlow{
+  0%{background-position:0% 0;}
+  100%{background-position:200% 0;}
+}
+
+.card-header{
+  font-size:20px;
+  font-weight:800;
+  color:var(--accent);
+  margin-bottom:12px;
+}
+
+.card-sub{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+.contact-button{
+  width:100%;
+  padding:18px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--accent),var(--accent-soft));
+  border:none;
+  color:var(--navy);
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.contact-button:hover{
+  transform:translateY(-3px);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .contact-inner{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .contact-ultra{
+    padding:90px 20px;
+  }
+
+  .contact-heading{
+    font-size:28px;
+  }
+
+  .contact-card{
+    padding:35px 25px;
+  }
+
+}
+
+</style>
+
+<script>
+
+function openMail(){
+
+  const subject = "PRIP Strategic Platform Engagement Request";
+
+  const body =
+  "Hello PRIP Team,%0D%0A%0D%0A" +
+  "We would like to request a confidential strategic platform briefing.%0D%0A%0D%0A" +
+  "Organisation:%0D%0A" +
+  "Sector:%0D%0A" +
+  "Operational Scope:%0D%0A" +
+  "Primary Objective:%0D%0A%0D%0A" +
+  "Preferred Discussion Timeline:%0D%0A%0D%0A" +
+  "Regards,";
+
+  window.location.href =
+  "mailto:info@prip.uk?subject=" + subject + "&body=" + body;
+
+}
+
+</script>
+<!-- ================= FOOTER ================= -->
+<!-- ================= INTELLIGENCE FOOTER ================= -->
+<footer class="footer-intel">
+
+  <!-- Moving Authority Signal -->
+  <div class="intel-signal"></div>
+
+  <div class="footer-intel-wrapper">
+
+    <!-- Left: Platform Identity -->
+    <div class="intel-brand">
+      <h3>PRIP</h3>
+      <span>Police Ready Incident Pack</span>
+      <p>UK SaaS Compliance Infrastructure</p>
+    </div>
+
+    <!-- Center: Deployment Status -->
+    <div class="intel-status">
+      <div class="status-dot"></div>
+      <div>
+        <strong>System Operational</strong>
+        <small>Secure • Encrypted • Audit-Ready</small>
+      </div>
+    </div>
+
+    <!-- Right: Legal -->
+    <div class="intel-legal">
+      © 2026 PRIP  
+      <div class="legal-sub">
+        All Rights Reserved • UK Regulatory SaaS
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+
+/* ================= COLORS ================= */
+:root{
+  --navy:#0A1F4F;
+  --deep:#132C6B;
+  --gold:#F59E0B;
+  --white:#FFFFFF;
+  --muted:#94A3B8;
+}
+
+/* ================= FOOTER ================= */
+.footer-intel{
+  background:linear-gradient(120deg,var(--navy),var(--deep));
+  padding:32px 8% 24px;
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Moving Authority Signal */
+.intel-signal{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  background-size:200% 100%;
+  animation:signalMove 4s linear infinite;
+}
+
+@keyframes signalMove{
+  0%{background-position:0% 0%;}
+  100%{background-position:200% 0%;}
+}
+
+/* Layout */
+.footer-intel-wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+/* Brand */
+.intel-brand h3{
+  font-size:18px;
+  font-weight:900;
+  margin-bottom:3px;
+}
+
+.intel-brand span{
+  font-size:12px;
+  font-weight:600;
+  color:var(--gold);
+}
+
+.intel-brand p{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+/* Status */
+.intel-status{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:12px;
+}
+
+.status-dot{
+  width:9px;
+  height:9px;
+  background:var(--gold);
+  border-radius:50%;
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(245,158,11,0.6);}
+  70%{box-shadow:0 0 0 8px rgba(245,158,11,0);}
+  100%{box-shadow:0 0 0 0 rgba(245,158,11,0);}
+}
+
+.intel-status small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+/* Legal */
+.intel-legal{
+  font-size:11px;
+  text-align:right;
+  color:var(--muted);
+}
+
+.legal-sub{
+  font-size:10px;
+  margin-top:4px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .footer-intel-wrapper{
+    flex-direction:column;
+    text-align:center;
+    gap:18px;
+  }
+
+  .intel-legal{
+    text-align:center;
+  }
+
+}
+
+</style>
+
+</body>
+</html>
