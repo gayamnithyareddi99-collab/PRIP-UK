@@ -240,16 +240,151 @@ footer{
 <body>
 
 <!-- ================= NAV ================= -->
-<nav>
+<nav class="prip-nav">
+
   <div class="logo">PRIP <span>UK</span></div>
-  <div class="nav-links">
+
+  <!-- Desktop Links -->
+  <div class="nav-links" id="navLinks">
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Features</a>
     <a href="#">Market</a>
     <a href="#">Contact</a>
   </div>
+
+  <!-- Mobile Toggle -->
+  <div class="mobile-toggle" id="mobileToggle">🍊</div>
+
 </nav>
+
+<style>
+
+/* ===== COLORS ===== */
+:root{
+  --navy:#0A1F4F;
+  --deep:#0D2C6C;
+  --accent:#3EEA7A;
+  --white:#FFFFFF;
+}
+
+/* ===== NAV BASE ===== */
+.prip-nav{
+  background:linear-gradient(90deg,var(--navy),var(--deep));
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+}
+
+/* LOGO */
+.logo{
+  font-size:20px;
+  font-weight:900;
+  color:var(--white);
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+/* DESKTOP LINKS */
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  color:var(--white);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  position:relative;
+  transition:0.3s ease;
+}
+
+/* underline hover */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:var(--accent);
+  transition:0.3s ease;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* MOBILE TOGGLE ICON */
+.mobile-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.mobile-toggle:hover{
+  transform:rotate(15deg);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:70%;
+    background:var(--navy);
+    flex-direction:column;
+    padding-top:120px;
+    gap:30px;
+    text-align:center;
+    transition:0.4s ease;
+  }
+
+  .nav-links a{
+    font-size:16px;
+  }
+
+  .nav-links.show{
+    right:0;
+  }
+
+  .mobile-toggle{
+    display:block;
+  }
+
+}
+
+</style>
+
+<script>
+
+const toggle = document.getElementById("mobileToggle");
+const navLinks = document.getElementById("navLinks");
+
+toggle.addEventListener("click", ()=>{
+  navLinks.classList.toggle("show");
+});
+
+/* Auto close when clicking link */
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navLinks.classList.remove("show");
+  });
+});
+
+</script>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
@@ -809,14 +944,96 @@ footer{
   color:var(--light);
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE VERSION ================= */
 @media(max-width:900px){
+
+  .features-elite-pro{
+    padding:80px 20px 70px;
+  }
+
+  .features-header{
+    margin-bottom:50px;
+  }
+
+  .features-label{
+    font-size:10px;
+    letter-spacing:0.25em;
+  }
+
+  .features-header h2{
+    font-size:26px;
+    line-height:1.3;
+    margin:16px 0 12px;
+  }
+
+  .features-divider{
+    width:70px;
+    height:3px;
+  }
+
+  .features-header p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* GRID */
   .features-grid{
     grid-template-columns:1fr;
+    gap:28px;
   }
+
+  /* CARD */
+  .feature-box{
+    padding:20px;
+    border-radius:14px;
+  }
+
+  /* IMAGE */
+  .image-wrap{
+    margin-bottom:14px;
+  }
+
+  .image-wrap img{
+    height:150px;
+    border-radius:10px;
+  }
+
+  /* TEXT */
+  .feature-box h4{
+    font-size:16px;
+    margin-bottom:8px;
+  }
+
+  .feature-box p{
+    font-size:13px;
+    line-height:1.5;
+  }
+
+}
+
+/* ================= SMALL DEVICES ================= */
+@media(max-width:480px){
+
   .features-header h2{
-    font-size:28px;
+    font-size:22px;
   }
+
+  .feature-box{
+    padding:16px;
+  }
+
+  .image-wrap img{
+    height:130px;
+  }
+
+  .feature-box h4{
+    font-size:15px;
+  }
+
+  .feature-box p{
+    font-size:12.5px;
+  }
+
 }
 
 </style>
@@ -1080,16 +1297,104 @@ footer{
   font-size:14px;
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE VERSION ================= */
 @media(max-width:900px){
 
-  .ps-structure{
-    grid-template-columns:1fr;
-    gap:40px;
+  .ps-executive{
+    padding:70px 20px 60px;
+  }
+
+  .ps-header{
+    margin-bottom:45px;
   }
 
   .ps-header h2{
-    font-size:26px;
+    font-size:24px;
+    line-height:1.3;
+    margin:16px 0 12px;
+  }
+
+  .ps-line{
+    width:70px;
+    height:3px;
+  }
+
+  /* STACK STRUCTURE */
+  .ps-structure{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  /* COLUMN CARD STYLE */
+  .ps-column{
+    padding:24px 20px;
+    border-radius:8px;
+  }
+
+  .ps-badge{
+    font-size:10px;
+    letter-spacing:0.2em;
+    margin-bottom:14px;
+  }
+
+  .ps-column h3{
+    font-size:18px;
+    margin-bottom:14px;
+  }
+
+  .ps-column p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:18px;
+  }
+
+  /* PROBLEM POINTS */
+  .ps-points div{
+    font-size:13px;
+    margin-bottom:10px;
+  }
+
+  /* METRIC BOX */
+  .ps-metric{
+    padding:14px;
+    font-size:13px;
+    margin-top:18px;
+  }
+
+  /* SOLUTION LIST */
+  .ps-item{
+    font-size:13px;
+    margin-bottom:10px;
+  }
+
+  .ps-outcome{
+    padding:14px;
+    font-size:13px;
+    margin-top:18px;
+  }
+
+}
+
+/* ================= SMALL DEVICES ================= */
+@media(max-width:480px){
+
+  .ps-header h2{
+    font-size:21px;
+  }
+
+  .ps-column{
+    padding:20px 16px;
+  }
+
+  .ps-column h3{
+    font-size:16px;
+  }
+
+  .ps-column p,
+  .ps-item,
+  .ps-metric,
+  .ps-outcome{
+    font-size:12.8px;
   }
 
 }
@@ -1262,24 +1567,94 @@ footer{
   margin-bottom:12px;
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE UPGRADE ================= */
 @media(max-width:900px){
 
   .uk-reality-pro{
-    padding:80px 20px;
+    padding:70px 20px 60px;
+  }
+
+  .reality-container{
+    text-align:left;
+  }
+
+  .reality-tag{
+    font-size:10px;
+    letter-spacing:0.25em;
   }
 
   .reality-heading{
-    font-size:26px;
+    font-size:24px;
+    line-height:1.3;
+    margin-bottom:14px;
   }
 
-  .reality-grid{
-    grid-template-columns:1fr;
-    gap:25px;
+  .reality-divider{
+    width:70px;
+    height:3px;
+    margin:18px 0 20px;
   }
 
   .reality-intro{
     font-size:14px;
+    line-height:1.6;
+    margin-bottom:35px;
+  }
+
+  /* STAT GRID – Vertical Executive Cards */
+  .reality-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-bottom:45px;
+  }
+
+  .stat-card{
+    padding:16px 14px;
+    border-left:4px solid var(--accent);
+    background:rgba(255,255,255,0.04);
+    border-radius:6px;
+  }
+
+  .stat-card h3{
+    font-size:22px;
+    margin-bottom:6px;
+  }
+
+  .stat-card p{
+    font-size:13px;
+    line-height:1.5;
+  }
+
+  /* GAP SECTION */
+  .gap-section h4{
+    font-size:17px;
+    margin-bottom:10px;
+  }
+
+  .gap-section p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+}
+
+/* ================= SMALL DEVICES ================= */
+@media(max-width:480px){
+
+  .reality-heading{
+    font-size:21px;
+  }
+
+  .reality-intro{
+    font-size:13px;
+  }
+
+  .stat-card h3{
+    font-size:20px;
+  }
+
+  .stat-card p{
+    font-size:12.5px;
   }
 
 }
@@ -1516,33 +1891,100 @@ footer{
   border-bottom:5px solid transparent;
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE UPGRADE ================= */
 @media(max-width:900px){
 
-  .process-flow{
-    flex-direction:column;
+  .process-section{
+    padding:70px 20px 60px;
   }
 
+  .process-container{
+    text-align:left;
+  }
+
+  .process-tag{
+    font-size:10px;
+    letter-spacing:0.25em;
+  }
+
+  .process-title{
+    font-size:24px;
+    line-height:1.3;
+    margin-bottom:14px;
+  }
+
+  .process-divider{
+    width:70px;
+    height:3px;
+    margin:0 0 20px;
+  }
+
+  .process-intro{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:35px;
+  }
+
+  /* Vertical Timeline Feel */
+  .process-flow{
+    flex-direction:column;
+    gap:22px;
+  }
+
+  .process-step{
+    padding:18px 16px;
+    border-radius:10px;
+  }
+
+  .process-step h4{
+    font-size:15px;
+  }
+
+  .process-step p{
+    font-size:13px;
+  }
+
+  .step-number{
+    width:30px;
+    height:30px;
+    font-size:11px;
+  }
+
+  /* Vertical Connector */
   .connector{
     width:2px;
-    height:30px;
+    height:28px;
+    margin:0 auto;
   }
 
   .connector::before{
     width:2px;
-    height:30px;
+    height:28px;
   }
 
   .connector::after{
     display:none;
   }
 
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media(max-width:480px){
+
   .process-title{
-    font-size:26px;
+    font-size:21px;
   }
 
   .process-intro{
-    font-size:14px;
+    font-size:13px;
+  }
+
+  .process-step{
+    padding:15px;
+  }
+
+  .process-step p{
+    font-size:12.5px;
   }
 
 }
@@ -1761,24 +2203,98 @@ footer{
   color:var(--light);
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE OPTIMISATION ================= */
 @media(max-width:900px){
 
-  .founder-strategy{
-    grid-template-columns:1fr;
-    gap:40px;
+  .founder-institutional{
+    padding:80px 20px 70px;
   }
 
+  .founder-wrap{
+    max-width:100%;
+  }
+
+  /* Eyebrow */
+  .founder-eyebrow{
+    font-size:10px;
+    letter-spacing:0.2em;
+    line-height:1.5;
+  }
+
+  /* Heading */
   .founder-heading{
-    font-size:26px;
+    font-size:24px;
+    line-height:1.3;
+    margin-bottom:18px;
+  }
+
+  .founder-line{
+    width:80px;
+    height:3px;
+    margin-bottom:35px;
+  }
+
+  /* Manifesto */
+  .founder-manifesto{
+    margin-bottom:50px;
   }
 
   .statement{
-    font-size:16px;
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  .founder-name{
+    font-size:12px;
+    margin-top:12px;
+  }
+
+  /* Strategy Grid */
+  .founder-strategy{
+    grid-template-columns:1fr;
+    gap:30px;
+    margin-bottom:50px;
+  }
+
+  .strategy-item h4{
+    font-size:15px;
+    margin-bottom:8px;
   }
 
   .strategy-item p{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  /* Closing */
+  .founder-closing{
+    padding-top:20px;
+  }
+
+  .founder-closing p{
     font-size:14px;
+    line-height:1.7;
+  }
+
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media(max-width:480px){
+
+  .founder-heading{
+    font-size:21px;
+  }
+
+  .statement{
+    font-size:14px;
+  }
+
+  .strategy-item p{
+    font-size:12.5px;
+  }
+
+  .founder-closing p{
+    font-size:13px;
   }
 
 }
@@ -2078,19 +2594,102 @@ footer{
   opacity:1;
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE FAQ ================= */
 @media(max-width:900px){
 
   .prip-faq{
-    padding:70px 20px;
+    padding:70px 18px 60px;
+  }
+
+  .faq-wrapper{
+    max-width:100%;
+  }
+
+  /* Header */
+  .faq-header{
+    margin-bottom:40px;
+  }
+
+  .faq-mini{
+    font-size:10px;
+    letter-spacing:0.2em;
   }
 
   .faq-header h2{
-    font-size:26px;
+    font-size:24px;
+    line-height:1.3;
+  }
+
+  .faq-divider{
+    width:90px;
+    height:3px;
+  }
+
+  .faq-header p{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  /* Item */
+  .faq-item{
+    padding:18px 0;
+  }
+
+  .faq-item::before{
+    left:-10px;
+    top:22px;
+  }
+
+  /* Question */
+  .faq-question{
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .faq-left{
+    gap:12px;
+  }
+
+  .faq-number{
+    font-size:12px;
+    min-width:28px;
   }
 
   .faq-title-text{
-    font-size:15px;
+    font-size:14px;
+    line-height:1.4;
+  }
+
+  /* Bigger tap area */
+  .faq-toggle{
+    width:22px;
+    height:22px;
+    flex-shrink:0;
+  }
+
+  /* Answer */
+  .faq-answer{
+    font-size:13px;
+    line-height:1.6;
+    margin-top:12px;
+  }
+
+}
+
+
+/* EXTRA SMALL DEVICES */
+@media(max-width:480px){
+
+  .faq-header h2{
+    font-size:21px;
+  }
+
+  .faq-title-text{
+    font-size:13px;
+  }
+
+  .faq-answer{
+    font-size:12.5px;
   }
 
 }
@@ -2364,24 +2963,98 @@ document.querySelectorAll(".faq-question").forEach(item=>{
   transform:translateY(-3px);
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE CONTACT ================= */
 @media(max-width:900px){
+
+  .contact-ultra{
+    padding:80px 20px 70px;
+  }
+
+  /* Remove heavy ambient glow for performance */
+  .ambient{
+    display:none;
+  }
 
   .contact-inner{
     grid-template-columns:1fr;
-    gap:50px;
+    gap:40px;
   }
 
-  .contact-ultra{
-    padding:90px 20px;
+  /* Badge */
+  .contact-badge{
+    font-size:10px;
+    letter-spacing:0.25em;
   }
+
+  /* Heading */
+  .contact-heading{
+    font-size:26px;
+    line-height:1.3;
+  }
+
+  .contact-divider{
+    width:120px;
+    margin-bottom:22px;
+  }
+
+  /* Text */
+  .contact-text{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* Trust Tags */
+  .contact-trust{
+    gap:10px;
+    margin-top:18px;
+  }
+
+  .contact-trust span{
+    font-size:10px;
+    padding:6px 12px;
+  }
+
+  /* Card */
+  .contact-card{
+    padding:28px 22px;
+  }
+
+  .card-header{
+    font-size:16px;
+  }
+
+  .card-sub{
+    font-size:11px;
+    margin-bottom:22px;
+  }
+
+  /* Button */
+  .contact-button{
+    padding:14px;
+    font-size:13px;
+  }
+
+}
+
+
+/* EXTRA SMALL DEVICES */
+@media(max-width:480px){
 
   .contact-heading{
-    font-size:28px;
+    font-size:22px;
+  }
+
+  .contact-text{
+    font-size:13px;
   }
 
   .contact-card{
-    padding:35px 25px;
+    padding:22px 18px;
+  }
+
+  .contact-button{
+    padding:12px;
+    font-size:12px;
   }
 
 }
@@ -2553,21 +3226,89 @@ function openMail(){
   margin-top:4px;
 }
 
-/* MOBILE */
+/* ================= PREMIUM MOBILE FOOTER ================= */
 @media(max-width:900px){
 
-  .footer-intel-wrapper{
-    flex-direction:column;
-    text-align:center;
-    gap:18px;
+  .footer-intel{
+    padding:26px 20px 22px;
   }
 
-  .intel-legal{
+  /* Stack layout cleanly */
+  .footer-intel-wrapper{
+    flex-direction:column;
+    align-items:center;
     text-align:center;
+    gap:16px;
+  }
+
+  /* Brand Section */
+  .intel-brand h3{
+    font-size:16px;
+    letter-spacing:1px;
+  }
+
+  .intel-brand span{
+    font-size:11px;
+  }
+
+  .intel-brand p{
+    font-size:10px;
+    opacity:0.8;
+  }
+
+  /* Status Section */
+  .intel-status{
+    flex-direction:column;
+    gap:6px;
+    font-size:11px;
+  }
+
+  .intel-status strong{
+    font-size:12px;
+  }
+
+  .intel-status small{
+    font-size:9px;
+  }
+
+  .status-dot{
+    margin-bottom:4px;
+  }
+
+  /* Legal Section */
+  .intel-legal{
+    font-size:10px;
+    line-height:1.4;
+  }
+
+  .legal-sub{
+    font-size:9px;
+    margin-top:3px;
   }
 
 }
 
+
+/* EXTRA SMALL DEVICES */
+@media(max-width:480px){
+
+  .footer-intel{
+    padding:22px 16px 18px;
+  }
+
+  .intel-brand h3{
+    font-size:15px;
+  }
+
+  .intel-status{
+    font-size:10px;
+  }
+
+  .intel-legal{
+    font-size:9px;
+  }
+
+}
 </style>
 
 </body>
