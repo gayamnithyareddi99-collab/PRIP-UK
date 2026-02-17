@@ -979,9 +979,15 @@ body{
     padding:22px;
     cursor:pointer;
     position:relative;
+    transition:0.3s ease;
   }
 
-  /* Add Arrow */
+  /* Hover / Tap effect */
+  .architecture-card:active{
+    transform:scale(0.98);
+  }
+
+  /* Arrow with movement */
   .architecture-card::after{
     content:"➜";
     position:absolute;
@@ -989,15 +995,42 @@ body{
     top:24px;
     font-size:18px;
     color:var(--accent);
-    transition:0.3s ease;
+    transition:0.4s ease;
+    animation:arrowPulse 1.8s infinite;
+  }
+
+  /* Arrow soft movement */
+  @keyframes arrowPulse{
+    0%{ transform:translateX(0px); opacity:0.7; }
+    50%{ transform:translateX(5px); opacity:1; }
+    100%{ transform:translateX(0px); opacity:0.7; }
   }
 
   /* Rotate arrow when active */
   .architecture-card.active::after{
     transform:rotate(90deg);
+    animation:none;
   }
 
-  /* Hide text by default (accordion style) */
+  /* Click Me floating label */
+  .architecture-card::before{
+    content:"Tap to Expand";
+    position:absolute;
+    right:20px;
+    bottom:10px;
+    font-size:11px;
+    color:var(--accent);
+    opacity:0.7;
+    animation:tapBlink 2s infinite;
+  }
+
+  @keyframes tapBlink{
+    0%{ opacity:0.3; }
+    50%{ opacity:1; }
+    100%{ opacity:0.3; }
+  }
+
+  /* Hide text by default */
   .architecture-card p{
     max-height:0;
     overflow:hidden;
@@ -1006,31 +1039,13 @@ body{
 
   /* Show when active */
   .architecture-card.active p{
-    max-height:200px;
+    max-height:220px;
     margin-top:10px;
   }
 
-}
-/* MOBILE ORANGE MOVEMENT */
-@media(max-width:900px){
-
-  .mobile-toggle{
-    display:block;
-    position:fixed;
-    top:20px;
-    right:20px;
-    font-size:28px;
-    cursor:pointer;
-    z-index:1100;
-
-    /* Floating animation */
-    animation:orangeFloat 3s ease-in-out infinite;
-  }
-
-  @keyframes orangeFloat{
-    0%{ transform:translateY(0px); }
-    50%{ transform:translateY(-6px); }
-    100%{ transform:translateY(0px); }
+  /* Remove tap text when open */
+  .architecture-card.active::before{
+    display:none;
   }
 
 }
