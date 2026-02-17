@@ -972,7 +972,7 @@ body{
 
   .architecture-grid{
     grid-template-columns:1fr;
-    gap:20px;
+    gap:18px;
   }
 
   .architecture-card{
@@ -982,12 +982,18 @@ body{
     transition:0.3s ease;
   }
 
-  /* Hover / Tap effect */
-  .architecture-card:active{
-    transform:scale(0.98);
+  /* Pulse border effect (Click Me Feel) */
+  .architecture-card{
+    animation:cardPulse 3s infinite ease-in-out;
   }
 
-  /* Arrow with movement */
+  @keyframes cardPulse{
+    0%{ box-shadow:0 0 0 0 rgba(62,234,122,0.3); }
+    70%{ box-shadow:0 0 0 10px rgba(62,234,122,0); }
+    100%{ box-shadow:0 0 0 0 rgba(62,234,122,0); }
+  }
+
+  /* Arrow */
   .architecture-card::after{
     content:"➜";
     position:absolute;
@@ -995,15 +1001,15 @@ body{
     top:24px;
     font-size:18px;
     color:var(--accent);
+    animation:arrowMove 1.5s infinite ease-in-out;
     transition:0.4s ease;
-    animation:arrowPulse 1.8s infinite;
   }
 
-  /* Arrow soft movement */
-  @keyframes arrowPulse{
-    0%{ transform:translateX(0px); opacity:0.7; }
-    50%{ transform:translateX(5px); opacity:1; }
-    100%{ transform:translateX(0px); opacity:0.7; }
+  /* Arrow subtle movement */
+  @keyframes arrowMove{
+    0%{ transform:translateX(0); }
+    50%{ transform:translateX(6px); }
+    100%{ transform:translateX(0); }
   }
 
   /* Rotate arrow when active */
@@ -1012,44 +1018,38 @@ body{
     animation:none;
   }
 
-  /* Click Me floating label */
-  .architecture-card::before{
-    content:"Tap to Expand";
-    position:absolute;
-    right:20px;
-    bottom:10px;
-    font-size:11px;
-    color:var(--accent);
-    opacity:0.7;
-    animation:tapBlink 2s infinite;
-  }
-
-  @keyframes tapBlink{
-    0%{ opacity:0.3; }
-    50%{ opacity:1; }
-    100%{ opacity:0.3; }
-  }
-
-  /* Hide text by default */
+  /* Hide content default */
   .architecture-card p{
     max-height:0;
     overflow:hidden;
+    opacity:0;
     transition:0.4s ease;
   }
 
   /* Show when active */
   .architecture-card.active p{
-    max-height:220px;
-    margin-top:10px;
-  }
-
-  /* Remove tap text when open */
-  .architecture-card.active::before{
-    display:none;
+    max-height:300px;
+    opacity:1;
+    margin-top:12px;
   }
 
 }
 </style>
+<script>
+  document.querySelectorAll(".architecture-card").forEach(card=>{
+  card.addEventListener("click",()=>{
+
+    // Close others (auto close)
+    document.querySelectorAll(".architecture-card").forEach(c=>{
+      if(c !== card){
+        c.classList.remove("active");
+      }
+    });
+
+    card.classList.toggle("active");
+  });
+});
+</script>
 <!-- ================= EXECUTIVE PROBLEM SOLUTION ================= -->
 <section id="solutions" class="ps-executive">
 
