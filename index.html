@@ -138,7 +138,44 @@ nav{
   top:0;
   z-index:1000;
 }
+/* MOBILE TOGGLE ICON */
+.mobile-toggle{
+  display:none;
+}
 
+@media(max-width:900px){
+
+  .mobile-toggle{
+    display:flex;
+    position:fixed;
+    top:18px;
+    right:20px;
+    width:55px;
+    height:55px;
+    background:var(--white);
+    border-radius:50%;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    cursor:pointer;
+    z-index:1200;
+
+    /* Premium Shadow */
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+    /* Floating Movement */
+    animation:floatMove 3s ease-in-out infinite;
+    transition:0.3s ease;
+  }
+
+  /* Soft floating up-down */
+  @keyframes floatMove{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0px); }
+  }
+
+}
 /* LOGO */
 .logo{
   font-size:20px;
@@ -427,7 +464,7 @@ body{
 
 <body>
 
-<section id="hero" class="hero">
+<section id="home" class="hero">
   <div class="hero-container">
 
     <div class="hero-header">
@@ -758,103 +795,85 @@ body{
 }
 
 </style>
-<!-- ================= ELITE FEATURES SECTION PRO ================= -->
-<section id="features" class="features-elite-pro">
+<!-- ================= ELITE INTELLIGENCE ARCHITECTURE ================= -->
+<section class="elite-architecture">
 
-  <div class="features-wrap">
+  <div class="architecture-container">
 
     <!-- HEADER -->
-    <div class="features-header">
-      <span class="features-label">PLATFORM INTELLIGENCE LAYER</span>
+    <div class="architecture-header">
+      <span class="architecture-tag">
+        UK COMPLIANCE INFRASTRUCTURE • ENFORCEMENT READY • SaaS DEPLOYMENT
+      </span>
 
       <h2>
-        Structured <span>Compliance Infrastructure</span><br>
-        Built for <span class="accent">Operational Control</span>
+        ⚙️ Structured <span>Operational Intelligence</span><br>
+        Built for <span class="accent">Police-Aligned Evidence Control</span>
       </h2>
 
-      <div class="features-divider"></div>
+      <div class="architecture-divider"></div>
 
-      <p>
-        PRIP transforms incident documentation into enforcement-grade,
-        structured digital compliance infrastructure with automation,
-        audit integrity and scalable SaaS deployment.
+      <p class="architecture-intro">
+        PRIP is not a reporting tool. It is a structured compliance engine designed
+        to transform fragmented retail incident documentation into
+        police-ready, evidentially validated digital intelligence packs.
       </p>
     </div>
 
     <!-- GRID -->
-    <div class="features-grid">
+    <div class="architecture-grid">
 
-      <!-- FEATURE CARD -->
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image1.jpg">
-        </div>
+      <div class="architecture-card">
+        <div class="architecture-icon">📋</div>
         <h4>Incident Capture Engine</h4>
-        <p>Digitised, police-ready reporting aligned with UK standards.</p>
+        <p>
+          Guided digital forms enforce mandatory metadata,
+          timestamps and evidential thresholds at source.
+        </p>
       </div>
 
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image2.jpg">
-        </div>
-        <h4>Evidence Consolidation</h4>
-        <p>Secure file, CCTV and statement integration framework.</p>
+      <div class="architecture-card">
+        <div class="architecture-icon">🧠</div>
+        <h4>Automated Validation Logic</h4>
+        <p>
+          Built-in compliance intelligence verifies CCTV references,
+          exhibit consistency and documentation rules.
+        </p>
       </div>
 
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image3.jpg">
-        </div>
-        <h4>Police Export Reports</h4>
-        <p>Automated structured incident documentation outputs.</p>
+      <div class="architecture-card">
+        <div class="architecture-icon">📦</div>
+        <h4>Structured Evidence Bundling</h4>
+        <p>
+          Indexed, DEMS-compatible evidence packs generated
+          without manual file assembly.
+        </p>
       </div>
 
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image4.jpg">
-        </div>
-        <h4>Immutable Audit Logs</h4>
-        <p>Time-stamped traceability across compliance lifecycle.</p>
+      <div class="architecture-card">
+        <div class="architecture-icon">🔐</div>
+        <h4>Immutable Audit Protection</h4>
+        <p>
+          Time-stamped validation trails ensure governance transparency
+          and evidential integrity.
+        </p>
       </div>
 
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image5.jpg">
-        </div>
-        <h4>Access Governance</h4>
-        <p>Tier-based permission logic ensuring accountability.</p>
+      <div class="architecture-card">
+        <div class="architecture-icon">🏬</div>
+        <h4>Multi-Site Retail Oversight</h4>
+        <p>
+          Centralised dashboard enables structured compliance visibility
+          across store networks.
+        </p>
       </div>
 
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image6.jpg">
-        </div>
-        <h4>Compliance Dashboard</h4>
-        <p>Real-time risk visibility across locations.</p>
-      </div>
-
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image7.jpg">
-        </div>
-        <h4>Workflow Automation</h4>
-        <p>Streamlined structured documentation pipelines.</p>
-      </div>
-
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image8.jpg">
-        </div>
-        <h4>Risk Detection AI</h4>
-        <p>Predictive anomaly identification system.</p>
-      </div>
-
-      <div class="feature-box">
-        <div class="image-wrap">
-          <img src="image9.jpg">
-        </div>
-        <h4>Secure Cloud Deployment</h4>
-        <p>Scalable SaaS infrastructure built for UK retail.</p>
+      <div class="architecture-card">
+        <div class="architecture-icon">🚔</div>
+        <h4>Police-Ready Export Layer</h4>
+        <p>
+          Submission-ready digital packs aligned with UK enforcement intake standards.
+        </p>
       </div>
 
     </div>
@@ -868,13 +887,13 @@ body{
 :root{
   --navy:#0A1F4F;
   --deep:#0D2C6C;
-  --accent:#3EEA7A;
-  --light:#E6EAF2;
+  --accent:#F59E0B;   /* ORANGE BORDER */
   --white:#FFFFFF;
+  --light:#E6EAF2;
 }
 
 /* SECTION */
-.features-elite-pro{
+.elite-architecture{
   background:linear-gradient(135deg,var(--navy),var(--deep));
   padding:130px 8%;
   color:var(--white);
@@ -883,235 +902,164 @@ body{
   overflow:hidden;
 }
 
-/* Subtle radial glow */
-.features-elite-pro::before{
+/* subtle pattern */
+.elite-architecture::before{
   content:"";
   position:absolute;
-  width:400px;
-  height:400px;
-  background:radial-gradient(circle,var(--accent),transparent 70%);
-  opacity:0.06;
-  top:-150px;
-  right:-120px;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:70px 70px;
+}
+
+.architecture-container{
+  position:relative;
+  max-width:1150px;
+  margin:auto;
+  z-index:2;
 }
 
 /* HEADER */
-.features-header{
+.architecture-header{
   text-align:center;
-  max-width:900px;
-  margin:auto;
   margin-bottom:90px;
 }
 
-.features-label{
+.architecture-tag{
   font-size:12px;
-  letter-spacing:0.4em;
+  letter-spacing:0.35em;
   font-weight:700;
   color:var(--accent);
 }
 
-.features-header h2{
-  font-size:46px;
+.architecture-header h2{
+  font-size:44px;
   font-weight:900;
-  margin:20px 0 15px;
+  margin:20px 0 18px;
+  line-height:1.2;
 }
 
-.features-header .accent{
+.architecture-header span{
   color:var(--accent);
 }
 
-.features-divider{
-  width:120px;
+.architecture-divider{
+  width:130px;
   height:4px;
   background:var(--accent);
   margin:0 auto 25px;
   border-radius:10px;
 }
 
-.features-header p{
+.architecture-intro{
+  max-width:800px;
+  margin:auto;
   font-size:16px;
-  color:var(--light);
   line-height:1.7;
+  color:var(--light);
 }
 
 /* GRID */
-.features-grid{
+.architecture-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:50px;
+  gap:45px;
 }
 
 /* CARD */
-.feature-box{
+.architecture-card{
+  background:rgba(255,255,255,0.05);
+  padding:35px;
+  border-radius:18px;
+  border:2px solid var(--accent);  /* ORANGE BORDER */
+  transition:0.4s ease;
   position:relative;
-  background:rgba(255,255,255,0.04);
-  padding:28px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.08);
-  overflow:hidden;
-  transition:0.5s ease;
 }
 
-/* Animated Shine */
-.feature-box::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.25),
-    transparent
-  );
-  transform:skewX(-25deg);
+/* Orange Glow Hover */
+.architecture-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(245,158,11,0.4);
 }
 
-.feature-box:hover::after{
-  animation:shine 1s forwards;
-}
-
-@keyframes shine{
-  100%{
-    left:150%;
-  }
-}
-
-/* Hover depth */
-.feature-box:hover{
-  transform:translateY(-12px);
-  border-color:var(--accent);
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-}
-
-/* IMAGE */
-.image-wrap{
-  overflow:hidden;
-  border-radius:14px;
+/* ICON */
+.architecture-icon{
+  font-size:30px;
   margin-bottom:18px;
 }
 
-.image-wrap img{
-  width:100%;
-  height:170px;
-  object-fit:cover;
-  transition:0.6s ease;
-}
-
-.feature-box:hover img{
-  transform:scale(1.1);
-}
-
 /* TITLE */
-.feature-box h4{
+.architecture-card h4{
   font-size:18px;
   font-weight:800;
-  margin-bottom:10px;
+  margin-bottom:14px;
   color:var(--accent);
 }
 
 /* TEXT */
-.feature-box p{
+.architecture-card p{
   font-size:14px;
-  line-height:1.6;
+  line-height:1.7;
   color:var(--light);
 }
 
-/* ================= PREMIUM MOBILE VERSION ================= */
+/* ================= MOBILE UPGRADE ONLY ================= */
 @media(max-width:900px){
 
-  .features-elite-pro{
-    padding:80px 20px 70px;
-  }
-
-  .features-header{
-    margin-bottom:50px;
-  }
-
-  .features-label{
-    font-size:10px;
-    letter-spacing:0.25em;
-  }
-
-  .features-header h2{
-    font-size:26px;
-    line-height:1.3;
-    margin:16px 0 12px;
-  }
-
-  .features-divider{
-    width:70px;
-    height:3px;
-  }
-
-  .features-header p{
-    font-size:14px;
-    line-height:1.6;
-  }
-
-  /* GRID */
-  .features-grid{
+  .architecture-grid{
     grid-template-columns:1fr;
-    gap:28px;
+    gap:20px;
   }
 
-  /* CARD */
-  .feature-box{
-    padding:20px;
-    border-radius:14px;
+  .architecture-card{
+    padding:22px;
+    cursor:pointer;
+    position:relative;
   }
 
-  /* IMAGE */
-  .image-wrap{
-    margin-bottom:14px;
+  /* Add Arrow */
+  .architecture-card::after{
+    content:"➜";
+    position:absolute;
+    right:20px;
+    top:24px;
+    font-size:18px;
+    color:var(--accent);
+    transition:0.3s ease;
   }
 
-  .image-wrap img{
-    height:150px;
-    border-radius:10px;
+  /* Rotate arrow when active */
+  .architecture-card.active::after{
+    transform:rotate(90deg);
   }
 
-  /* TEXT */
-  .feature-box h4{
-    font-size:16px;
-    margin-bottom:8px;
+  /* Hide text by default (accordion style) */
+  .architecture-card p{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s ease;
   }
 
-  .feature-box p{
-    font-size:13px;
-    line-height:1.5;
-  }
-
-}
-
-/* ================= SMALL DEVICES ================= */
-@media(max-width:480px){
-
-  .features-header h2{
-    font-size:22px;
-  }
-
-  .feature-box{
-    padding:16px;
-  }
-
-  .image-wrap img{
-    height:130px;
-  }
-
-  .feature-box h4{
-    font-size:15px;
-  }
-
-  .feature-box p{
-    font-size:12.5px;
+  /* Show when active */
+  .architecture-card.active p{
+    max-height:200px;
+    margin-top:10px;
   }
 
 }
 
 </style>
+<script>
+  /* Mobile Accordion Activation */
+if(window.innerWidth <= 900){
+  document.querySelectorAll(".architecture-card").forEach(card=>{
+    card.addEventListener("click",()=>{
+      card.classList.toggle("active");
+    });
+  });
+}
+</script>
 <!-- ================= EXECUTIVE PROBLEM SOLUTION ================= -->
 <section id="solutions" class="ps-executive">
 
