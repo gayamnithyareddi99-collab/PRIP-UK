@@ -138,44 +138,7 @@ nav{
   top:0;
   z-index:1000;
 }
-/* MOBILE TOGGLE ICON */
-.mobile-toggle{
-  display:none;
-}
 
-@media(max-width:900px){
-
-  .mobile-toggle{
-    display:flex;
-    position:fixed;
-    top:18px;
-    right:20px;
-    width:55px;
-    height:55px;
-    background:var(--white);
-    border-radius:50%;
-    justify-content:center;
-    align-items:center;
-    font-size:26px;
-    cursor:pointer;
-    z-index:1200;
-
-    /* Premium Shadow */
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-
-    /* Floating Movement */
-    animation:floatMove 3s ease-in-out infinite;
-    transition:0.3s ease;
-  }
-
-  /* Soft floating up-down */
-  @keyframes floatMove{
-    0%{ transform:translateY(0px); }
-    50%{ transform:translateY(-6px); }
-    100%{ transform:translateY(0px); }
-  }
-
-}
 /* LOGO */
 .logo{
   font-size:20px;
@@ -1048,18 +1011,30 @@ body{
   }
 
 }
+/* MOBILE ORANGE MOVEMENT */
+@media(max-width:900px){
 
-</style>
-<script>
-  /* Mobile Accordion Activation */
-if(window.innerWidth <= 900){
-  document.querySelectorAll(".architecture-card").forEach(card=>{
-    card.addEventListener("click",()=>{
-      card.classList.toggle("active");
-    });
-  });
+  .mobile-toggle{
+    display:block;
+    position:fixed;
+    top:20px;
+    right:20px;
+    font-size:28px;
+    cursor:pointer;
+    z-index:1100;
+
+    /* Floating animation */
+    animation:orangeFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes orangeFloat{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-6px); }
+    100%{ transform:translateY(0px); }
+  }
+
 }
-</script>
+</style>
 <!-- ================= EXECUTIVE PROBLEM SOLUTION ================= -->
 <section id="solutions" class="ps-executive">
 
